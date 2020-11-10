@@ -1,0 +1,26 @@
+<?php
+     $string = 'Ravi';
+     $totalCount = return_nonRepetativeString_count($string);
+     echo 'Total Count : '.$totalCount.'<br/> By Ravi Kumar Chaurasia';
+     function return_nonRepetativeString_count($name)
+     {
+        $split_store_array = str_split(strtolower($name));
+        $count = 0;
+        for($li=0;$li<count($split_store_array);$li++)
+        {
+         for($lj=0;$lj<count($split_store_array);$lj++)
+         {
+           if($li != $lj)
+           {
+               if($split_store_array[$li] == $split_store_array[$lj])
+               {
+                $count++;
+               };
+           };
+         };
+        };
+      $total_count = count($split_store_array) - $count;
+      return $total_count;
+    };
+    
+?>
